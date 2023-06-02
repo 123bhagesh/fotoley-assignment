@@ -1,23 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import PauseCircleFilledIcon from '@mui/icons-material/PauseCircleFilled';
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import { useState } from 'react';
+import { Button } from '@mui/base';
+import {data} from './Data/data'
 
 function App() {
+
+  const [play, setPlay] = useState(false)
+  
+  const handlePlay=()=>{
+    setPlay(!play)
+  }
+  console.log("DATA",data)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Button onClick={handlePlay} style={{border:"none", backgroundColor:"white",cursor:"pointer"}}>
+        {
+          play ? <PlayCircleIcon style={{ color: "#25beda" , width:"80px",height:"80px"}}/>
+          : <PauseCircleFilledIcon style={{ color: "#25beda" , width:"80px",height:"80px"}}/>
+        }
+      </Button>
+      
+      <ArrowLeftIcon style={{ width:"100px",height:"100px"}} />
+      <ArrowRightIcon style={{ width:"300px",height:"80px"}}/>
     </div>
   );
 }
