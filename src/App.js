@@ -24,10 +24,18 @@ function App() {
   const handlePrev = () => {
     setIndex((prev) => (index === 0 ? data.length - 1 : prev - 1));
   };
-
+  const handleStart = () => {
+    setPlay(!play);
+  };
   useEffect(() => {
-    setNewData(data[index]);
-  }, [data, index]);
+    setNewData(data[index])
+    let timer;
+    if (play) {
+      timer = setInterval(handleNext, 4000);
+    }
+    return () => clearInterval(timer);
+
+  }, [handleNext,data,index]);
 
   console.log("NEWData", newData);
   return (
@@ -82,7 +90,7 @@ function App() {
           }}
         >
           <ArrowLeftIcon
-            style={{ width: "60px", height: "90px" }}
+            style={{ width: "60px", height: "90px",cursor:"pointer" }}
             onClick={handlePrev}
           />
 
@@ -99,25 +107,28 @@ function App() {
             ))}
           </Box>
           <ArrowRightIcon
-            style={{ width: "60px", height: "90px" }}
+            style={{ width: "60px", height: "90px",cursor:"pointer" }}
             onClick={handleNext}
           />
         </Box>
         <Box sx={{ width: "35%", height: "120px", border: "1px solid black",alignItems:"center",}}>
             <Button
-              onClick={handlePlay}
+              onClick={handleStart}
               style={{
                 border: "none",
                 backgroundColor: "white",
                 cursor: "pointer",
               }}
             >
-              {play ? (
-                <PlayCircleIcon
+              {play ?
+               (
+                <PauseCircleFilledIcon
                   style={{ color: "#25beda", width: "90px", height: "90px" }}
                 />
-              ) : (
-                <PauseCircleFilledIcon
+              )
+              :
+              (
+                <PlayCircleIcon
                   style={{ color: "#25beda", width: "90px", height: "90px" }}
                 />
               )}
