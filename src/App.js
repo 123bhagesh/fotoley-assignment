@@ -19,13 +19,13 @@ function App() {
   };
 
   const handleNext=()=>{
-     setCount(prev=> prev+1)
+     setCount((prev) => prev + 1)
     if(count==data.length-1){
       setCount(0)
     }
   }
   const handlePrev=()=>{
-    setCount(prev=> prev+1)
+    setCount((prev) => prev-1)
     if(count==0){
       setCount(data.length-1)
     }
@@ -47,21 +47,25 @@ function App() {
           </>
         ))
       } */}
-
-      <Container
+      <div style={{width:"70%",border: "1px solid black"}}></div>
+      
+      <Box
         sx={{
+          width:"90%",
+          margin:"auto",
           display: "flex",
           justifyContent: "space-between",
           columnGap: "20px",
+          mt:"30px"
         }}
       >
-        <Box sx={{ width: "80%", height: "560px", border: "1px solid black" }}>
+        <Box sx={{ width: "70%", height: "630px", border: "1px solid black" }}>
           <img
-            style={{ width: "750px", height: "430px", borderRadius: "26px" }}
+            style={{ width: "96%", height: "500px", borderRadius: "26px" }}
             src={newData.img}
           />
           <Box sx={{ columnGap: "5px",display:'flex',justifyContent:'space-between',mt:"20px" }}>
-            <ArrowLeftIcon style={{ width: "70px", height: "90px",border:"1px solid red" }} onClick={handleNext} />
+            <ArrowLeftIcon style={{ width: "70px", height: "90px"}} onClick={handlePrev} />
 
             <Box sx={{display:"flex", columnGap:"8px"}}>
               {data?.map((el, i) => (
@@ -71,22 +75,22 @@ function App() {
                 />
               ))}
             </Box>
-            <ArrowRightIcon style={{ width: "70px", height: "90px",border:"1px solid red"  }} onClick={handlePrev} />
+            <ArrowRightIcon style={{ width: "70px", height: "90px"}} onClick={handleNext} />
           </Box>
         </Box>
         <Box
           sx={{
-            width: "50%",
-            height: "500px",
+            width: "35%",
+            height: "630px",
             border: "1px solid black",
             textAlign: "left",
             color: "#545454",
           }}
         >
           <Typography variant="h4">{newData.title}</Typography>
-          <Typography>{newData.description}</Typography>
+          <Typography sx={{mt:"16px"}}>{newData.description}</Typography>
         </Box>
-      </Container>
+      </Box>
     </div>
   );
 }
