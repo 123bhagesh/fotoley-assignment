@@ -7,7 +7,7 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { useState } from 'react';
 import { Button } from '@mui/base';
 import {data} from './Data/data'
-import { Box, Container } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 
 function App() {
 
@@ -35,7 +35,14 @@ function App() {
             <Box sx={{width:"80%",height:"500px", border:"1px solid black"}}>
                <img style={{width:"680px", height:"430px",borderRadius:"20px"}} src={el.img}/>
             </Box>
-            <Box sx={{width:"50%", height:"500px", border:"1px solid black"}}></Box>
+            <Box sx={{width:"50%", height:"500px", border:"1px solid black",textAlign:"left",color:'#545454'}}>
+            <Typography variant="h4" >
+              {el.title}
+            </Typography>
+            <Typography  >
+              {el.description}
+            </Typography>
+            </Box>
           </Container>
         ))
       }
