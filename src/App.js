@@ -29,10 +29,17 @@ function App() {
           </>
         ))
       } */}
-      <Container sx={{display:"flex",justifyContent:"space-between",columnGap:"20px"}}>
-        <Box sx={{width:"80%",height:"500px", border:"1px solid black"}}></Box>
-        <Box sx={{width:"50%", height:"500px", border:"1px solid black"}}></Box>
-      </Container>
+      {
+        data?.map((el,i)=> (
+          <Container sx={{display:"flex",justifyContent:"space-between",columnGap:"20px"}}>
+            <Box sx={{width:"80%",height:"500px", border:"1px solid black"}}>
+               <img style={{width:"680px", height:"430px",borderRadius:"20px"}} src={el.img}/>
+            </Box>
+            <Box sx={{width:"50%", height:"500px", border:"1px solid black"}}></Box>
+          </Container>
+        ))
+      }
+
 
     </div>
   );
