@@ -24,9 +24,9 @@ export let data = [
         title:"Nainital",
         description:"Nainital is a Himalayan resort town in the Kumaon region of India’s Uttarakhand state, at an elevation of roughly 2,000m. Formerly a British hill station, it’s set around Nainital Lake, a popular boating site with Naina Devi Hindu Temple on its north shore. A cable car runs to Snow View observation point (at 2,270m), with vistas over the town and mountains including Nanda Devi, Uttarakhand’s highest peak."
     },
-    {   id:6,
-        img:"https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQjrhHK2CS23_4aKlOqAayNEd_buvrJjFtrDuXRh-VcHbJcgGccyrnwIXZmrYq0Vk-h",
-        title:"Jodhpur",
-        description:"Jodhpur is a city in the Thar Desert of the northwest Indian state of Rajasthan. Its 15th-century Mehrangarh Fort is a former palace that’s now a museum, displaying weapons, paintings and elaborate royal palanquins (sedan chairs). Set on on a rocky outcrop, the fort overlooks the walled city, where many buildings are painted the city’s iconic shade of blue."
-    },
+    // {   id:6,
+    //     img:"https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQjrhHK2CS23_4aKlOqAayNEd_buvrJjFtrDuXRh-VcHbJcgGccyrnwIXZmrYq0Vk-h",
+    //     title:"Jodhpur",
+    //     description:"Jodhpur is a city in the Thar Desert of the northwest Indian state of Rajasthan. Its 15th-century Mehrangarh Fort is a former palace that’s now a museum, displaying weapons, paintings and elaborate royal palanquins (sedan chairs). Set on on a rocky outcrop, the fort overlooks the walled city, where many buildings are painted the city’s iconic shade of blue."
+    // },
 ]
