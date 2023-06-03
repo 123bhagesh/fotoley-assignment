@@ -42,7 +42,7 @@ export const Content = ({newData}) => {
           overflow: "hidden",
           textOverflow: "ellipsis",
           fontSize: "15px",
-          // display: "-webkit-box",
+          textAlign:"justify"
         }}
       >
         {newData.description}

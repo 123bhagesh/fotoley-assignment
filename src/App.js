@@ -25,7 +25,7 @@ function App() {
     setNewData(data[index]);
     let timer;
     if (play) {
-      timer = setInterval(handleNext, 4000);
+      timer = setInterval(handleNext, 5000);
     }
     return () => clearInterval(timer);
   }, [handleNext, data, index]);
