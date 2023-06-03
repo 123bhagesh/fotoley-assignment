@@ -7,6 +7,7 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { useState } from 'react';
 import { Button } from '@mui/base';
 import {data} from './Data/data'
+import { Box, Container } from '@mui/material';
 
 function App() {
 
@@ -15,20 +16,24 @@ function App() {
   const handlePlay=()=>{
     setPlay(!play)
   }
-  console.log("DATA",data)
+  console.log("DATA",data[0])
 
   return (
     <div className="App">
+      {/* {
+        data.map((el)=>(
+          <>
+            <h2>{el.title}</h2>
+            <img style={{width:"640px", height:"420px"}} src={el.img}/>
+            <p>{el.description}</p>
+          </>
+        ))
+      } */}
+      <Container sx={{display:"flex",justifyContent:"space-between",columnGap:"20px"}}>
+        <Box sx={{width:"80%",height:"500px", border:"1px solid black"}}></Box>
+        <Box sx={{width:"50%", height:"500px", border:"1px solid black"}}></Box>
+      </Container>
 
-      <Button onClick={handlePlay} style={{border:"none", backgroundColor:"white",cursor:"pointer"}}>
-        {
-          play ? <PlayCircleIcon style={{ color: "#25beda" , width:"80px",height:"80px"}}/>
-          : <PauseCircleFilledIcon style={{ color: "#25beda" , width:"80px",height:"80px"}}/>
-        }
-      </Button>
-      
-      <ArrowLeftIcon style={{ width:"100px",height:"100px"}} />
-      <ArrowRightIcon style={{ width:"300px",height:"80px"}}/>
     </div>
   );
 }
