@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { data } from "./Data/data";
@@ -10,19 +9,18 @@ function App() {
   const [newData, setNewData] = useState([]);
   const [index, setIndex] = useState(0);
 
-  const handlePlay = () => {
-    setPlay(!play);
-  };
-
   const handleNext = () => {
     setIndex((prev) => (index === data.length - 1 ? 0 : prev + 1));
   };
+
   const handlePrev = () => {
     setIndex((prev) => (index === 0 ? data.length - 1 : prev - 1));
   };
+  
   const handleStart = () => {
     setPlay(!play);
   };
+
   useEffect(() => {
     setNewData(data[index]);
     let timer;
